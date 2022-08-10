@@ -1,0 +1,20 @@
+{
+  "name": "@vue/play",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "vite": "^2.7.13",
+    "vite-plugin-html": "^2.1.1",
+    "vue-tsc": "^0.31.2"
+  }
+}

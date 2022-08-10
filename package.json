@@ -1,0 +1,86 @@
+{
+  "private": true,
+  "packageManager": "pnpm@6.24.4",
+  "workspaces": [
+    "packages/*",
+    "play"
+  ],
+  "scripts": {
+    "dev": "pnpm -C play dev",
+    "commit": "git-cz",
+    "lint:eslint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0",
+    "lint:prettier": "prettier --write \"src/**/*.{js,json,ts,tsx,css,less,scss,vue,html,md}\"",
+    "lint:lint-staged": "lint-staged",
+    "format": "prettier --write .",
+    "clean:dist": "rimraf dist",
+    "clean:lib": "rimraf node_modules && rimraf pnpm-lock.yaml",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/compile-core": "workspace:^1.0.0",
+    "@vue/reactivity": "workspace:^1.0.0",
+    "@vue/runtime-core": "workspace:^1.0.0",
+    "@vue/runtime-dom": "workspace:^1.0.0",
+    "@vue/shared": "workspace:^1.0.0",
+    "vue": "workspace:^1.0.0",
+    "typescript": "^4.5.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@pnpm/find-workspace-packages": "^3.1.34",
+    "@pnpm/logger": "^4.0.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.2",
+    "@types/gulp": "^4.0.9",
+    "@types/node": "^17.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "^0.14.10",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.4.1",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.63.0",
+    "rollup-plugin-esbuild": "^4.8.2",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-jscc": "^2.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sucrase": "^3.20.3",
+    "ts-morph": "^13.0.2",
+    "typescript": "^4.5.4"
+  }
+}
